@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -6,20 +7,29 @@
 </head>
 <script src="code.js"></script>
 <style>
-    p{
+    p {
         font-size: 3em;
     }
-    button{
+
+    button {
         font-size: 2em;
     }
 </style>
-<body>
+
+<body style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
     <h1>The countdown is above</h1>
-    <div style="display: flex; flex-direction: row;">
-    <p id='seccounter' >3</p>
-    <p>:</p>
-    <p id='mincount'>0</p>
-</div>
-    <button onclick='minTest()'>minutes</button>
+    <div id="cls" style="display: flex; flex-direction: row;">
+        <p id='minuteCounter'></p>
+        <p id="pointerDivider" style="margin-left: 5px; margin-right: 5px;"></p>
+        <p id='secondCounter'></p>
+    </div>
+    <section style="display: flex; flex-direction: column; gap: 10px;" id="buttonsArea">
+        <button class="start" id="startPomodoro" onclick='hideButtons(true),  minTest(25)'>Start a Pomodoro</button>
+        <button class="start" id="startShort" onclick='hideButtons(true), minTest(5)'>Start a Short Pause</button>
+        <button class="start" id="startLong" onclick='hideButtons(true), minTest(30)'>Start a Long Pause</button>
+        <button class="start" hidden id="pauseButton" onclick='hidePause(), resetApp()'>Pause</button>
+
+    </section>
 </body>
+
 </html>
